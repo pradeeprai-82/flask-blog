@@ -1,0 +1,15 @@
+{% include 'header.html' %}
+ <!--           Comments Area -->
+
+<div class="box">
+	<h1>Upload Blog</h1>
+    <form action="{{ url_for('post_upload') }}" method="post">
+    	<input type="text" name="title" placeholder="title"  />
+        <input type="text" name="body" placeholder="Body" />
+
+        <button type="submit" class="btn btn-primary btn-block">Post Blog</button>
+    </form>
+</div>
+
+               
+{% include 'footer.html' %}

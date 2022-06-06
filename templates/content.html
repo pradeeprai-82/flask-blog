@@ -1,0 +1,42 @@
+{% include 'header.html' %}
+
+
+ <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <!-- Post preview-->
+                    <h1>User: {{ user.name }}</h1>
+
+                    {% for post in all_posts %}
+                    <div class="post-preview" >
+                        <a href="post.html">
+                            <h2 class="post-title">{{ post.title }}</h2>
+                            <h2 class="post-subtitle">{{ post.subtitle }}</h2>
+                            <h3 class="post-subtitle">{{ post.body }}</h3>
+                        </a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">Start Bootstrap</a>
+                            on {{ post.date }}
+                          
+                        </p>
+                        <div>
+                        <h2>Comment</h2>
+                        {% for comment in comments %}
+                        <div>{{ comment.text }}</div>
+                        {% endfor %}
+                        </div>
+                        <form>
+                            <label for="email">Email</label><br>
+                            <input type="email" id="email" name="email"><br>
+                            <label for="text">Text</label><br>
+                            <input type="text" id="text" name="text">
+                            <button type="submit" >Post Comment</button>
+                        </form>         
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+</div> 
+
+{% include 'footer.html' %}
